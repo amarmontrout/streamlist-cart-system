@@ -9,11 +9,12 @@ import { useState } from "react";
 function App() {
   // Lift the cart state here so it can be shared across the app
   const [cart, setCart] = useState([]);
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <Router>
       {/* Optionally, you can pass the cart to Navbar if you need to show a count */}
-      <Navbar cart={cart} />
+      <Navbar cart={cart} totalQuantity={totalQuantity} />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* Pass the cart state and updater to Subscriptions */}

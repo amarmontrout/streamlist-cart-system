@@ -1,5 +1,6 @@
 // Cart.jsx
 import React from "react";
+import "../styles/Cart.css"
 
 const Cart = ({ cart, setCart }) => {
   // Function to handle deletion of an item
@@ -11,6 +12,12 @@ const Cart = ({ cart, setCart }) => {
   // Function to handle quantity change
   const changeQuantity = (index, newQuantity) => {
     const updatedCart = [...cart];
+
+    // Restrict from changing subscription value greater than 1
+    if(updatedCart[index].id >=1 && updatedCart[index].id <= 4 && newQuantity > 1) {
+      return;
+    }
+
     if (newQuantity > 0) {
       updatedCart[index].quantity = newQuantity;
     } else {

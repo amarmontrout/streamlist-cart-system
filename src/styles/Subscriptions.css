@@ -17,14 +17,6 @@
   width: 500px;
 }
 
-.subscription-amount {
-  position: relative;
-  text-align: right;
-  width: 200px;
-  top: 127px;
-  left: 300px;
-}
-
 .subscription-img {
   display: flex;
   justify-content: center;
@@ -36,12 +28,17 @@
 }
 
 .subscription-btn {
-  padding: 10px;
-  border-radius: 10px;
-  background-color: green;
-  border-color: green;
+  padding: 12px 24px; /* Adjust padding for button size */
+  background-color: #002fff; /* Blue background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Consistent font size */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 .subscription-btn:hover {
   cursor: pointer;
+  background-color: #0056b3; /* Darker blue on hover */
 }
