@@ -35,9 +35,9 @@ const Cart = ({ cart, setCart }) => {
     <div className="cart-page">
       <h1>Your Cart</h1>
       {cart.length === 0 ? (
-        <p>Your cart is empty!</p>
+        <p className="empty-message">Your cart is empty!</p>
       ) : (
-        <div>
+        <div className="cart">
           <form>
             {cart.map((item, index) => (
               <div key={index} className="cart-item">

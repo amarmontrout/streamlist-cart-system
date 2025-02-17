@@ -4,6 +4,14 @@
   margin-bottom: 10px;
 }
 
+.empty-message {
+  text-align: center;
+}
+
+.cart {
+  padding: 0 10%;
+}
+
 .cart-item h3 {
   margin: 5px 0;
 }
