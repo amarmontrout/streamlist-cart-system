@@ -4,11 +4,20 @@ import Home from "./pages/Home";
 import Subscriptions from "./pages/subscriptions";
 import Cart from "./pages/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   // Lift the cart state here so it can be shared across the app
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
+
+  useEffect(() => {
+    if (Array.isArray(cart)) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  }, [cart]);
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (

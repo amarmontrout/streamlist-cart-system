@@ -1,29 +1,35 @@
 // Cart.jsx
 import React from "react";
-import "../styles/Cart.css"
+import "../styles/Cart.css";
 
 const Cart = ({ cart, setCart }) => {
   // Function to handle deletion of an item
   const deleteItem = (index) => {
-    const updatedCart = cart.filter((_, i) => i !== index);
-    setCart(updatedCart);
+    setCart((prevCart) => prevCart.filter((_, i) => i !== index));
   };
 
   // Function to handle quantity change
   const changeQuantity = (index, newQuantity) => {
-    const updatedCart = [...cart];
+    setCart((prevCart) => {
+      const updatedCart = [...prevCart];
 
-    // Restrict from changing subscription value greater than 1
-    if(updatedCart[index].id >=1 && updatedCart[index].id <= 4 && newQuantity > 1) {
-      return;
-    }
+      // Restrict from changing subscription value greater than 1
+      if (
+        updatedCart[index].id >= 1 &&
+        updatedCart[index].id <= 4 &&
+        newQuantity > 1
+      ) {
+        return prevCart;
+      }
 
-    if (newQuantity > 0) {
-      updatedCart[index].quantity = newQuantity;
-    } else {
-      updatedCart.splice(index, 1);
-    }
-    setCart(updatedCart);
+      if (newQuantity > 0) {
+        updatedCart[index].quantity = newQuantity;
+      } else {
+        updatedCart.splice(index, 1);
+      }
+
+      return updatedCart;
+    });
   };
 
   // Calculate the total price
