@@ -47,12 +47,12 @@
   color: #007bff;
 }
 
-.view-cart-btn:hover {
+.checkout-btn:hover {
   cursor: pointer;
   background-color: #0056b3; /* Darker blue on hover */
 }
 
-.view-cart-btn {
+.checkout-btn {
   padding: 12px 24px; /* Adjust padding for button size */
   background-color: #002fff; /* Blue background */
   color: white; /* White text */
@@ -61,4 +61,14 @@
   cursor: pointer; /* Pointer cursor on hover */
   font-size: 16px; /* Consistent font size */
   transition: background-color 0.3s ease; /* Smooth hover effect */
+  
+}
+
+.checkout-btn a {
+  text-decoration-line: none;
+  color: rgb(255, 255, 255);
+}
+
+.checkout-btn-position {
+  text-align: right;
 }

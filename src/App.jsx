@@ -3,6 +3,7 @@ import Navbar from "./pages/Navbar";
 import Home from "./pages/Home";
 import Subscriptions from "./pages/subscriptions";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -33,6 +34,7 @@ function App() {
         />
         {/* Pass the cart state and updater to Cart */}
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route path="/checkout" element={<Checkout cart={cart} setCart={setCart} />} />
       </Routes>
     </Router>
   );

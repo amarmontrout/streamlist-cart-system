@@ -1,5 +1,6 @@
 // Cart.jsx
 import React from "react";
+import { Link } from "react-router";
 import "../styles/Cart.css";
 
 const Cart = ({ cart, setCart }) => {
@@ -66,6 +67,11 @@ const Cart = ({ cart, setCart }) => {
           </form>
           <div className="cart-total">
             <h2>Total: ${total}</h2>
+          </div>
+          <div className="checkout-btn-position">
+            <button className="checkout-btn">
+              <Link to="/checkout">Checkout</Link>
+            </button>
           </div>
         </div>
       )}
